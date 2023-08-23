@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout code') {
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/shashank-ssriv/django-notes-app.git'
+                git branch: 'main', url: 'https://github.com/shashank-ssriv/django-notes-app.git'
                 sh 'ls'
             }
         }
