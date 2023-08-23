@@ -54,7 +54,7 @@ pipeline {
                 sh "/usr/bin/envsubst < helm-charts/charts/django-notes-app/Chart.yaml > /tmp/Chart.yaml"
                 sh "mv /tmp/values.yaml helm-charts/charts/django-notes-app/values.yaml"
                 sh "mv /tmp/Chart.yaml helm-charts/charts/django-notes-app/Chart.yaml"
-                sh "cd helm-charts/charts/django-notes-app && helm upgrade --install django-notes-app . --values values.yaml"
+                sh "cd helm-charts/charts/django-notes-app && helm upgrade --install -n backend django-notes-app . --values values.yaml"
             }
         }
     }
