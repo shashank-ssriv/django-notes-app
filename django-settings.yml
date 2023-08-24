@@ -151,4 +151,4 @@ data:
 kind: ConfigMap
 metadata:
   name: django-settings
-  namespace: internal
+  namespace: backend
