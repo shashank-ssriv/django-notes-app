@@ -86,6 +86,34 @@ data:
 
     WSGI_APPLICATION = 'notesapp.wsgi.application'
 
+    import os
+
+    LOGGING = {
+        "version": 1,
+        "disable_existing_loggers": False,
+        "handlers": {
+            "console": {
+                "class": "logging.StreamHandler",
+            },
+            "file": {
+            "level": "DEBUG",
+            "class": "logging.FileHandler",
+            "filename": "/app/backend/debug.log",
+        },
+        },
+        "root": {
+            "handlers": ["console"],
+            "level": "WARNING",
+        },
+        "loggers": {
+            "django": {
+                "handlers": ["file"],
+                "level": "DEBUG",
+                "propagate": True,
+            },
+        },
+    }
+
 
     # Database
     # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

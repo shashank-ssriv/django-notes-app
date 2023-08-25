@@ -3,6 +3,8 @@ FROM python:3.9
 WORKDIR /app/backend
 
 COPY requirements.txt /app/backend
+RUN chown admin:admin -R ${WORKDIR}
+USER admin
 RUN pip install -r requirements.txt
 
 COPY . /app/backend
