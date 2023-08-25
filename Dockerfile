@@ -4,9 +4,11 @@ RUN addgroup --system --gid 2002 admin && \
 WORKDIR /app/backend
 
 COPY requirements.txt /app/backend
+
+RUN pip install -r requirements.txt
+
 RUN chown admin:admin -R /app/backend
 USER admin
-RUN pip install -r requirements.txt
 
 COPY . /app/backend
 
