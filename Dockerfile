@@ -1,5 +1,6 @@
 FROM python:3.9
-
+RUN addgroup --system --gid 2002 admin && \
+    adduser --system --uid 1001 admin
 WORKDIR /app/backend
 
 COPY requirements.txt /app/backend
